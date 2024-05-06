@@ -1,9 +1,9 @@
-import JobCard from "./components/JobCard/JobCard";
+import MainCard from "./components/MainCard/MainCard";
 
 function App() {
   return (
     <>
-      <JobCard />
+      <MainCard />
     </>
   );
 }
