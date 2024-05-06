@@ -215,3 +215,19 @@ button p {
   right: 10px;
   cursor: pointer;
 }
+
+/*  */ /*  */ /*  */ /*  */ /*  */ /*  */ /*  */ /*  */ /*  */ /*  */
+/*  */ /*  */ /*  */ /*  */ /*  */ /*  */ /*  */ /*  */ /*  */ /*  */
+/* RESPONSIVE CSS */
+/*  */ /*  */ /*  */ /*  */ /*  */ /*  */ /*  */ /*  */ /*  */ /*  */
+/*  */ /*  */ /*  */ /*  */ /*  */ /*  */ /*  */ /*  */ /*  */ /*  */
+
+@media (max-width: 767px) {
+  #root {
+    padding: 20px !important;
+  }
+  .collection {
+    margin: 30px 0;
+    padding: 0px;
+  }
+}

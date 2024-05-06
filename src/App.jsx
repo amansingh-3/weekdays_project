@@ -1,4 +1,4 @@
-import MainCard from "./components/MainCard/MainCard";
+import MainCard from "./components/MainCard/MainCard.jsx";
 
 function App() {
   return (

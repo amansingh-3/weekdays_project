@@ -41,3 +41,117 @@ p {
   margin-top: 5px;
   color: rgba(0, 0, 0, 0.87);
 }
+
+.Error-filter {
+  margin-top: 50px;
+}
+
+.search-section {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+}
+
+select,
+input {
+  font-family: "Lexend", sans-serif;
+  align-items: center;
+  cursor: default;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  min-height: 38px;
+  position: relative;
+  transition: all 100ms ease 0s;
+  background-color: rgb(255, 255, 255);
+  border-color: rgb(204, 204, 204);
+  border-radius: 4px;
+  border-style: solid;
+  border-width: 1px;
+  box-sizing: border-box;
+  min-width: 170px;
+  outline: 0px !important;
+  color: rgb(128, 128, 128);
+  margin-left: 2px;
+  margin-right: 2px;
+  font-size: 12px;
+  padding: 10px 5px;
+}
+.input-container {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+.filter-button {
+  background-color: rgb(255, 255, 255);
+  border-radius: 4px;
+  border: 1px solid rgb(204, 204, 204);
+  box-sizing: border-box;
+  font-family: "Lexend", sans-serif;
+  text-align: center;
+  margin-bottom: 5px;
+  outline: 0px !important;
+  color: rgb(128, 128, 128);
+  padding: 7px 30px;
+}
+.filter-button:active,
+.filter-button:focus,
+select:active,
+select:focus-visible,
+select :visited {
+  border: 2px solid blue;
+}
+
+.filter-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.select-wrapper {
+  margin-right: 10px; /* Adjust spacing between select and clear icon */
+}
+
+/* Style clear icon */
+.clear-icon {
+  position: absolute;
+  top: 55%;
+  right: 0px;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  color: rgb(128, 128, 128);
+}
+.clear-icon svg path {
+  fill: rgb(128, 128, 128) !important;
+}
+/* Hide clear icon by default */
+.clear-icon.hidden {
+  display: none;
+}
+
+.Error-filter img {
+  margin: 10px;
+}
+.Error-filter h3 {
+  color: black !important;
+}
+
+@media (max-width: 767px) {
+  .input-container {
+    flex-basis: 100%; /* Make each input take up full width on small screens */
+  }
+
+  .select-wrapper {
+    margin-right: 0; /* Remove margin between select and clear icon on small screens */
+  }
+  .filter-closed {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .filter-container {
+    display: none;
+  }
+}
