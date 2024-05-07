@@ -11,10 +11,12 @@ https://weekdays-project.netlify.app/
 
 
 Demo
+
 ![](https://github.com/amansingh-3/weekdays_project/blob/main/public/GIFS/DEMO_GIFF.gif)
 
 
 Responsive Design
+
 ![](https://github.com/amansingh-3/weekdays_project/blob/main/public/GIFS/Responsive_DEMO_GIF.gif)
 
 
