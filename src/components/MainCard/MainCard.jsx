@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import debounce from "../Debounce/debounce";
 import Modal from "../Modal/modal";
 import JobCard from "../JobCard/JobCard";
+import uparrow from "../../assets/up-arrow.png";
 
 const Card = () => {
   //   Use State For State Management
@@ -12,6 +13,9 @@ const Card = () => {
   const [page, setPage] = useState(0); // Track current page number
   const [hasMore, setHasMore] = useState(true);
   const [filterOpen, setFilterOpen] = useState(false);
+
+  const [showScrollButton, setShowScrollButton] = useState(false); // Corrected variable name
+
   const [filters, setFilters] = useState({
     role: "",
     employees: "",
@@ -126,6 +130,26 @@ const Card = () => {
     }
   };
 
+  const handleScrollTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 1500) {
+        // Adjust the scroll position threshold as needed
+        setShowScrollButton(true);
+      } else {
+        setShowScrollButton(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   // Add this function where you render the select inputs
   const renderClearIcon = (name) => {
     return filters[name] ? (
@@ -189,7 +213,7 @@ const Card = () => {
       (filters.employees === "" ||
         event.numberOfEmployees === filters.employees) &&
       (filters.experience === "" ||
-        parseInt(event.minExp) >= parseInt(filters.experience)) &&
+        parseInt(event.minExp) <= parseInt(filters.experience)) &&
       (filters.location === "" ||
         (filters.location.toLowerCase() === "remote" &&
           event.location.toLowerCase() === "remote") ||
@@ -433,6 +457,11 @@ const Card = () => {
       )}
       {isLoading && <p>Loading...</p>}
       {!hasMore && <p>No more data</p>}
+      {showScrollButton && (
+        <button className="scroll-to-top" onClick={handleScrollTop}>
+          <img src={uparrow} alt="Scroll TOp" width="50px" height="50px" />
+        </button>
+      )}
     </>
   );
 };

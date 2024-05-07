@@ -230,4 +230,10 @@ button p {
     margin: 30px 0;
     padding: 0px;
   }
+
+  .modal-content {
+    width: calc(100% - 20px);
+    overflow-y: auto;
+    height: 70vh;
+  }
 }
